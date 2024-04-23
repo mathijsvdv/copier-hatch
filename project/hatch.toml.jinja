@@ -1,0 +1,37 @@
+[version]
+path = "src/{{ python_package_import_name }}/__about__.py"
+
+[env]
+requires = ["hatch-pip-compile"]
+
+[envs.template]
+template = "template"
+type = "pip-compile"
+pip-compile-resolver = "uv"
+pip-compile-installer = "uv"
+lock-filename = "requirements/{env_name}.txt"
+python = "3.9"
+
+[envs.default]
+template = "template"
+type = "pip-compile"
+dependencies = [
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+    "ipykernel",
+    "nbstripout"
+]
+
+[envs.default.scripts]
+install-ipykernel = "python -m ipykernel install --user --name {{ python_package_import_name }} --display-name \"Python ({{ python_package_import_name }})\""
+install-nbstripout = "python -m nbstripout --install --attributes .gitattributes"
+
+[tool.hatch.envs.test]
+template = "template"
+dependencies = [
+    "pytest",
+    "pytest-cov",
+    "pytest-mock"
+]
+
