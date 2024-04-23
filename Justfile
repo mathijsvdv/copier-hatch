@@ -19,3 +19,6 @@ generate template=template dest=test_output:
 		-d author_fullname="John Doe" \
 		-d author_username="joesgithub" \
 		-d author_email="joe@example.com"
+
+clean:
+	rm -rf {{test_output}}
