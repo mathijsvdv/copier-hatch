@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
@@ -99,9 +99,3 @@ Homepage = "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repo
 Repository = "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repository_name }}"
 Documentation = "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repository_name }}#readme"
 Issues = "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repository_name }}/issues"
-
-{% if python_package_command_line_name -%}
-[project.scripts]
-{{ python_package_command_line_name }} = "{{ python_package_import_name }}.cli:main"
-
-{% endif -%}

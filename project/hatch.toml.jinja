@@ -1,5 +1,8 @@
 [version]
-path = "src/{{ python_package_import_name }}/__about__.py"
+source = "vcs"
+
+[build.hooks.vcs]
+version-file = "_version.py"
 
 [env]
 requires = ["hatch-pip-compile"]
