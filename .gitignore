@@ -174,3 +174,6 @@ releases/
 
 # config.mk for the Makefile - contains configuration specific to the developer
 config.mk
+
+# Test results
+tests/tmp
