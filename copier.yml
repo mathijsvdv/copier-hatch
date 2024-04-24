@@ -23,7 +23,7 @@ project_description:
 author_fullname:
   type: str
   help: Your full name
-  default: "{{ John Doe | git_user_name }}"
+  default: "{{ 'John Doe' | git_user_name }}"
 
 author_email:
   type: str
